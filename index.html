@@ -19,15 +19,14 @@ body {
 
 .bg {
   position: fixed;
-  inset: 0; /* 🔥 instead of width/height */
-
+  inset: 0;
+  filter: brightness(1.05) contrast(1.1);
   background: url('IMG_20260424_175341.jpeg') no-repeat center;
   background-size: cover;
-animation: zoomBg 20s infinite alternate;
+  animation: zoomBg 20s infinite alternate;
   z-index: -1;
-
-  width: 100vw;   /* 🔥 fix overflow */
-  height: 100vh;  /* 🔥 fix mobile height */
+  width: 100vw;
+  height: 100vh;
 }
 
 .bg::after {
@@ -328,41 +327,6 @@ border: 2px solid #d4af37;
   overflow: hidden;
 }
 
-.welcome-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  z-index: 1;
-
-  opacity: 0.6;
-
-  filter: brightness(0.7);
-
-  transform: none;
-}
-
-.welcome-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  z-index: 2;
-pointer-events: none;
-  background: linear-gradient(
-    to right,
-    rgba(30, 0, 40, 0.35),
-    rgba(80, 0, 60, 0.35)
-  );
-}
-
 .welcome-content {
   height: 100%;
   display: flex;
@@ -503,40 +467,26 @@ position: relative;
 }
 
 .welcome-title {
-  color: #ffd700;
+  font-family: 'Playfair Display', serif;
 
   background: linear-gradient(
     120deg,
-    #ffd700 20%,
-    #fff6cc 50%,
-    #ffd700 80%
+    #d4af37 20%,
+    #fff2b0 50%,
+    #d4af37 80%
   );
+
+  background-size: 200% auto;
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
+  animation: goldShine 4s linear infinite;
+
   text-shadow:
-    0 2px 10px rgba(0,0,0,0.9),
-    0 0 20px rgba(255,215,0,0.6);
+    0 2px 6px rgba(0,0,0,0.4),
+    0 0 10px rgba(255,215,0,0.5);
 }
-
-/* .welcome-title::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 40%;
-  height: 100%;
-
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255,255,255,0.7),
-    transparent
-  );
-
-  animation: shine 3s infinite;
-} */
 
 @keyframes goldShine {
   0% {
@@ -583,13 +533,6 @@ body {
 <div class="bg"></div>
 
 <section id="welcome">
-
-  <video autoplay muted loop playsinline class="welcome-video">
-    <source src="videoplayback.mp4" type="video/mp4">
-  </video>
-
-  <div class="welcome-overlay"></div>
-
   <div class="welcome-content">
     <h1 class="welcome-title">Madhu ❤️ Madhavi</h1>
     <p id="guestText"></p>
