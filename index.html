@@ -314,11 +314,11 @@ border: 2px solid #d4af37;
 
 #welcome {
   position: relative;
+  height: 100vh;
   height: 100dvh;
-  min-height: 100svh; 
+  height: 100svh;
   overflow: hidden;
 }
-
 .welcome-video {
   object-fit: cover;
   width: 100%;
@@ -545,6 +545,16 @@ border: 2px solid #d4af37;
     font-size: 38px;
   }
 }
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: env(safe-area-inset-top);
+}
+
 </style>
 </head>
 
@@ -555,7 +565,7 @@ border: 2px solid #d4af37;
 <section id="welcome">
 
   <video autoplay muted loop playsinline class="welcome-video">
-    <source src="Golden_Dust.mp4" type="video/mp4">
+    <source src="videoplayback.mp4" type="video/mp4">
   </video>
 
   <div class="welcome-overlay"></div>
