@@ -21,7 +21,7 @@ body {
   position: fixed;
   inset: 0;
   filter: brightness(1.05) contrast(1.1);
-  background: url('IMG_20260424_175341.jpeg') no-repeat center;
+  background: url('IMG_20260424_175341.jpeg') no-repeat right center;
   background-size: cover;
   animation: zoomBg 20s infinite alternate;
   z-index: -1;
@@ -41,6 +41,13 @@ background: linear-gradient(
   );
 
 }
+
+@media (max-width: 768px) {
+  .bg {
+    background-position: 75% center;
+  }
+}
+
 @keyframes zoomBg {
   from { transform: scale(1); }
   to { transform: scale(1.1); }
@@ -334,7 +341,7 @@ border: 2px solid #d4af37;
   align-items: center;
   flex-direction: column;
 position: relative;
-  z-index: 3; /* 🔥 above overlay */
+  z-index: 3;
   padding: 0 20px;
 }
 .welcome-sub {
@@ -392,7 +399,7 @@ position: relative;
   width: 100%;
   max-width: 500px;
 
-  margin: 0 auto;   /* ✅ proper centering */
+  margin: 0 auto; 
 
   border-radius: 12px;
   border: 2px solid rgba(212,175,55,0.4);
@@ -530,10 +537,8 @@ body {
   width: 40px;  
   height: 25px;
   object-fit: contain;
-
   vertical-align: middle;
-  margin-right: 6px;
-
+  /* margin-right: 6px; */
   border-radius: 0; 
 }
 
@@ -621,7 +626,7 @@ body {
 
     <div class="event-card">
       <!-- <h3>🌼 Haldi Ceremony</h3> -->
-      <h3> <img src="Picsart.png" class="icon"> Haldi Ceremony</h3>
+      <h3 style="position:relative; right: 1.5em;"> <img src="Picsart.png" class="icon"> Haldi Ceremony</h3>
       <p>12th May 2026</p>
       <p>Hyderabad</p>
 
@@ -634,7 +639,8 @@ body {
 
 
     <div class="event-card">
-      <h3>💍 The Wedding</h3>
+      <!-- <h3>💍 The Wedding</h3> -->
+       <h3 style="position:relative; right: 1.5em;"> <img src="pngtree.png" class="icon" style="height: 2em;width: 54px;"> The Wedding </h3>
       <p>13th May 2026 · 09:24 AM</p>
       <p>Celebrations Function Hall</p>
 
