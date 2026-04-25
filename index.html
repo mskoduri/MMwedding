@@ -526,6 +526,17 @@ body {
   }
 }
 
+.icon {
+  width: 40px;  
+  height: 25px;
+  object-fit: contain;
+
+  vertical-align: middle;
+  margin-right: 6px;
+
+  border-radius: 0; 
+}
+
 </style>
 </head>
 
@@ -608,12 +619,9 @@ body {
 
   <div class="event-container">
 
-    <!-- Haldi -->
     <div class="event-card">
-      <h3>🌼 Haldi Ceremony</h3>
-      <!-- <h3>
-  <img src="haldi.png" class="icon"> Haldi Ceremony
-</h3> -->
+      <!-- <h3>🌼 Haldi Ceremony</h3> -->
+      <h3> <img src="Picsart.png" class="icon"> Haldi Ceremony</h3>
       <p>12th May 2026</p>
       <p>Hyderabad</p>
 
@@ -647,7 +655,7 @@ body {
 </section>
 
 <div class="image-section fade" 
-     style="background-image: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc'); display:flex; align-items:center; justify-content:center;">
+     style="background-image: url('bride-and-groom.jpg'); display:flex; align-items:center; justify-content:center;">
   <h2>Together Forever 💍</h2>
 </div>
 
@@ -706,7 +714,7 @@ body {
 
 
 <audio id="music" loop>
-  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+  <source src="seetha-kalyanam.mp3" type="audio/mpeg">
 </audio>
 
 <script>
@@ -728,6 +736,8 @@ function enterSite() {
   setTimeout(() => {
     main.classList.add("show");
   }, 100);
+
+  document.getElementById("music").play();
 }
 
 const weddingDate = new Date("May 13, 2026 09:24:00").getTime();
@@ -769,6 +779,24 @@ function scrollDown() {
     behavior: "smooth"
   });
 }
+
+document.addEventListener("click", function (e) {
+  const music = document.getElementById("music");
+
+  if (
+    e.target.closest("button") ||
+    e.target.closest("a") ||
+    e.target.closest("input")
+  ) {
+    return;
+  }
+
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+});
 </script>
 
 </body>
