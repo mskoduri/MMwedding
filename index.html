@@ -183,6 +183,12 @@ input {
   letter-spacing: 2px;
 }
 
+.time, .card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
 .invite-card {
   position: relative;
   overflow: hidden;
@@ -328,9 +334,8 @@ border: 2px solid #d4af37;
 
 #welcome {
   position: relative;
-  height: 100vh;
-  height: 100dvh;
-  height: 100svh;
+   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
