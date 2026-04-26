@@ -565,7 +565,7 @@ body {
   max-width: 30vw;
   margin-bottom: 10px;
   position: relative;
-  bottom: 3em;
+  bottom: 1em;
 }
 
 @keyframes float {
@@ -580,8 +580,7 @@ body {
   object-fit: contain;
   display: block;
   margin: 10px auto;
-  position: relative;
-  bottom: 2em;
+  position: relative; 
 }
 
 img {
@@ -604,7 +603,7 @@ body {
   display: block;
   margin: 16px auto;  
   position: relative;
-  top: -2.5em;
+  top: 0.5em;
   /* filter: brightness(1.05) contrast(1.2) saturate(0.8)
           drop-shadow(0 0 4px rgba(212,175,55,0.7))
           drop-shadow(0 0 10px rgba(139,105,20,0.5)); */
@@ -632,14 +631,17 @@ body {
 }
 
 .invite-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #0c0103;
-  /* font-size: 16px; */
-  font-weight: 500;
-  pointer-events: none; 
+  position: relative;
+    top: 2.0em;
+    /* left: 50%; */
+    transform: translate(-50%, -50%);
+    color: #e0dbd885;
+    /* font-size: 16px; */
+    font-weight: 500;
+    pointer-events: none;
+    /* font-weight: bold; */
+    font-style: italic;
+    letter-spacing: 4px;
 }
 
 </style>
@@ -655,7 +657,7 @@ body {
     <img src="MM.png"  class="names-img" alt="Madhu Madhavi"> 
   <img src="20260426_203029.png" class="invite-text-img">
     <button onclick="enterSite()" class="invite-btn"> <img src="Picsart_26-04-26_20-19-04-859.png" class="open_invite">
-      <span class="invite-text">Open Invitation</span> </button>
+      <span class="invite-text">Tap on envelope</span> </button>
     <img src="Picsart_26-04-26_19-44-44-981.png" class="knot"></img>
   </div>
 
