@@ -20,13 +20,12 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  filter: brightness(1.05) contrast(1.1);
   background: url('IMG_20260424_175341.jpeg') no-repeat right center;
   background-size: cover;
-  animation: zoomBg 30s ease-in-out infinite alternate;
+  filter: brightness(1.05) contrast(1.1);
+  animation: zoomBg 40s linear infinite alternate;
   z-index: -1;
-  width: 100vw;
-  height: 100vh;
+  pointer-events: none;
 }
 
 .bg::after {
@@ -334,7 +333,6 @@ border: 2px solid #d4af37;
   position: relative;
    min-height: 100vh;
   min-height: 100dvh;
-  overflow: hidden;
 }
 
 .welcome-content {
@@ -592,8 +590,9 @@ html {
   -webkit-overflow-scrolling: touch;
 }
 
-section {
-  scroll-snap-align: start;
+body {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 </style>
@@ -716,7 +715,7 @@ section {
 </section>
 
 <div class="image-section fade" 
-     style="background-image: url('bride-and-groom.jpg'); display:flex; align-items:center; justify-content:center;">
+     style="background-image: url('DSC8753.jpeg'); display:flex; align-items:center; justify-content:center;">
   <h2>Together Forever 💍</h2>
 </div>
 
@@ -837,7 +836,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.fade').forEach(el => observer.observe(el));
 
 function scrollDown() {
-  document.querySelectorAll("section")[1].scrollIntoView({
+  document.querySelector("#main section").scrollIntoView({
     behavior: "smooth"
   });
 }
