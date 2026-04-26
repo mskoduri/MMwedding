@@ -18,7 +18,7 @@ body {
 
 
 .bg {
-  position: fixed;
+  position: absolute;
   inset: 0;
   background: url('IMG_20260426_200442.png') no-repeat right center;
   background-size: 420%;
@@ -104,7 +104,7 @@ button:hover {
 .fade {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: transform, opacity;
 }
 
@@ -194,7 +194,7 @@ input {
   margin: auto;
   border-radius: 10px;
   text-align: center;
-  box-shadow:0 10px 40px rgba(0,0,0,0.3),
+  box-shadow:0 5px 15px rgba(0,0,0,0.2),
             0 0 20px rgba(212,175,55,0.2);
 border: 2px solid #d4af37;
   font-family: 'Cormorant Garamond', serif;
@@ -644,6 +644,15 @@ body {
     letter-spacing: 4px;
 }
 
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
 </style>
 </head>
 
@@ -910,6 +919,8 @@ document.addEventListener("click", function (e) {
 });
 
 document.addEventListener("touchstart", () => {}, { passive: true });
+
+document.addEventListener('touchmove', function() {}, { passive: true });
 
 </script>
 
