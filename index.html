@@ -626,25 +626,70 @@ body {
   cursor: pointer;
 }
 
-
 .open_invite {
-  width: 80px;
-  height: auto;
+  width: 120px;
   display: block;
+  transition: transform 0.6s ease;
 }
 
 .invite-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 13px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+
+  color: #fff;
+
+  text-shadow:
+    0 0 6px rgba(255,215,0,0.8),
+    0 0 10px rgba(255,215,0,0.6);
+
+  pointer-events: none; /* important so click works */
+}
+.envelope-wrapper {
   position: relative;
-    top: 2.0em;
-    /* left: 50%; */
-    transform: translate(-50%, -50%);
-    color: #e0dbd885;
-    /* font-size: 16px; */
-    font-weight: 500;
-    pointer-events: none;
-    /* font-weight: bold; */
-    font-style: italic;
-    letter-spacing: 4px;
+  display: inline-block;
+}
+
+.seal-wrapper {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 50px;
+}
+
+.seal-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.seal-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: #3b1d03;
+  pointer-events: none;
+}
+
+.envelope-wrapper.open .seal-wrapper {
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: 0.4s ease;
+}
+
+.envelope-wrapper.open .open_invite {
+  transform: rotateX(35deg) scale(1.05);
 }
 
 html, body {
@@ -673,8 +718,17 @@ body {
     <img src="Ganesh.png" class="welcome-image">
     <img src="MM.png"  class="names-img" alt="Madhu Madhavi"> 
   <img src="20260429_123016.png" class="invite-text-img">
-    <button onclick="enterSite()" class="invite-btn"> <img src="Picsart_26-04-26_20-19-04-859.png" class="open_invite">
-      <span class="invite-text">Tap on envelope</span> </button>
+    
+  <button onclick="openEnvelope()" class="invite-btn">
+  <div class="envelope-wrapper">
+    <img src="Picsart_26-04-26_20-19-04-859.png" class="open_invite">
+    <div class="seal-wrapper">
+      <img src="seal.png" class="seal-img">
+      <span class="seal-text">OPEN</span>
+    </div>
+  </div>
+</button>
+
     <img src="Picsart_26-04-26_19-44-44-981.png" class="knot"></img>
   </div>
 
@@ -685,7 +739,7 @@ body {
 <section class="fade">
   <div class="invite-card">
 
-    <p class="top-text">TOGETHER WITH THEIR FAMILIES</p>
+    <p class="top-text">WITH THE BLESSINGS OF OUR FAMILIES</p>
 
     <!-- <div class="divider">
       <span></span> ❤️ <span></span>
@@ -972,6 +1026,16 @@ document.getElementById("main").addEventListener("click", function (e) {
     music.pause();
   }
 });
+
+function openEnvelope() {
+  const wrapper = document.querySelector(".envelope-wrapper");
+
+  wrapper.classList.add("open");
+
+  setTimeout(() => {
+    enterSite();
+  }, 700);
+}
 
 </script>
 
