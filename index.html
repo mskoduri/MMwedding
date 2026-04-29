@@ -662,6 +662,17 @@ body {
   transform: translate(-50%, -50%);
   width: 40px;
   height: 50px;
+  transition: transform 0.2s ease;
+  animation: glow 2s infinite;
+}
+
+@keyframes glow {
+  0%,100% { filter: drop-shadow(0 0 3px gold); }
+  50% { filter: drop-shadow(0 0 10px gold); }
+}
+
+.invite-btn:active .seal-wrapper {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .seal-img {
@@ -683,13 +694,20 @@ body {
 }
 
 .envelope-wrapper.open .seal-wrapper {
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%, -80%) scale(1.3) rotate(20deg);
   opacity: 0;
-  transition: 0.4s ease;
+  transition: all 0.5s ease;
 }
 
 .envelope-wrapper.open .open_invite {
+  animation: openShake 0.4s ease;
   transform: rotateX(35deg) scale(1.05);
+}
+
+@keyframes openShake {
+  0% { transform: rotateX(0deg); }
+  50% { transform: rotateX(10deg); }
+  100% { transform: rotateX(35deg); }
 }
 
 html, body {
@@ -1034,7 +1052,7 @@ function openEnvelope() {
 
   setTimeout(() => {
     enterSite();
-  }, 700);
+  }, 900);
 }
 
 </script>
