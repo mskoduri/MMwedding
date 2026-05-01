@@ -149,11 +149,20 @@ input {
 }
 
 .image-section h2 {
-  position: relative;
-  z-index: 1;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  position: absolute; 
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 8px 0;
+  color: #7a1f1f;
+  font-size: 16px;
+  letter-spacing: 1px;
+  /* font-weight: 500; */
 }
-
 .countdown-box {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -636,7 +645,7 @@ html {
     0 0 6px rgba(255,215,0,0.8),
     0 0 10px rgba(255,215,0,0.6);
 
-  pointer-events: none; /* important so click works */
+  pointer-events: none;
 }
 .envelope-wrapper {
   position: relative;
@@ -865,7 +874,7 @@ body {
 </div>
 
 <div class="image-section fade" style="background-image: url('IMG_20260424_223448.jpeg'); display:flex; align-items:center; justify-content:center;margin-top: 100px;">
-  <h2>Our Journey Begins 💖</h2>
+  <h2>A Beginning to Forever 💖</h2>
 </div>
 
 <section class="fade">
