@@ -321,11 +321,11 @@ border: 2px solid #d4af37;
   transition: 1s;
   display: flex;
   flex-direction: column;
-  gap: 30px; 
+  gap: 0; 
 }
 
 #main > section:first-child {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 
 #main.show {
@@ -378,7 +378,7 @@ position: relative;
 .scroll-down {
   position: relative;
   /* top: 2em;  */
-  margin-top: 20px;
+  margin-top: 8px;
   top: 0;
   text-align: center;
   cursor: pointer;
@@ -731,9 +731,10 @@ body {
 
 .event-count {
   max-width: 120%;
-  margin-bottom: -150px;
+  margin-bottom: 10px;
   position: relative;
   right: 10px;
+  margin-bottom: -120px;
 }
 
 .event-title-img
@@ -741,11 +742,6 @@ body {
   max-width: 130%;
   margin-bottom: -170px;
 }
-
-/* .event-count,
-.event-title-img {
-  margin-bottom: -130px;
-} */
 
 .select-wrapper {
   position: relative;
@@ -778,6 +774,15 @@ body {
 .card .select-wrapper,
 .card textarea {
   margin-top: 20px;   /* 🔥 same gap everywhere */
+}
+
+.submit-btn {
+  margin: 25px auto 0;
+  display: block;
+}
+
+.family-names span {
+  white-space: nowrap;
 }
 
 </style>
@@ -837,8 +842,7 @@ body {
 </div>
 </section>
 
-<section class="fade">
-  <!-- <h2 style="letter-spacing:3px; opacity:0.8;">SAVE THE DATE</h2> -->
+<div class="fade">
   <img src="Countdown.png" class="event-count" alt="The Countdown" >
 
   <div class="countdown-box">
@@ -859,14 +863,14 @@ body {
       <p>SECONDS</p>
     </div>
   </div>
-</section>
+</div>
 
-<div class="image-section fade" style="background-image: url('IMG_20260424_223448.jpeg'); display:flex; align-items:center; justify-content:center;">
+<div class="image-section fade" style="background-image: url('IMG_20260424_223448.jpeg'); display:flex; align-items:center; justify-content:center;margin-top: 100px;">
   <h2>Our Journey Begins 💖</h2>
 </div>
 
 <section class="fade">
-  <img src="Celebrations.png" class="event-title-img" alt="The Celebrations" style="position: relative;right: 10px;">
+  <img src="Celebrations.png" class="event-title-img" alt="The Celebrations" style="position: relative;right: 10px;margin-top: -130px;margin-bottom: -150px;">
 
   <div class="event-container">
 
@@ -897,12 +901,6 @@ body {
 
   </div>
 </section>
-
-<div class="image-section fade" 
-     style="background-image: url('DSC8753.jpeg'); display:flex; align-items:center; justify-content:center;">
-  <h2>Together Forever 💍</h2>
-</div>
-
 <section class="fade">
   <h1>Save the Date 💌</h1>
   <h2>13th May 2026</h2>
@@ -940,10 +938,10 @@ body {
     "We invite you to celebrate our special day"
   </h3>
     <h2 style="color: #cfa211;">👨‍👩‍👧 Family</h2>
-    <h3 class="family-names" style="font-style: italic; letter-spacing: 4px;">
-  Koduri Madhava Reddy<br>
-  Vijaya Lakshmi<br>
-  Mallikarjun Reddy
+ <h3 class="family-names">
+  <span>Koduri Madhava Reddy</span><br>
+  <span>Vijaya Lakshmi</span><br>
+  <span>Mallikarjun Reddy</span>
 </h3>
   </div>
 </section>
@@ -964,7 +962,7 @@ body {
 
 <textarea id="comment" placeholder="Message" rows="3" style="padding: 10px;border-radius: 10px;border: none;margin-top: 25px;"></textarea><br><br>
 
-<button onclick="rsvp()" style="margin-left: 110px;">Submit</button>
+<button onclick="rsvp()" class="submit-btn">Submit</button>
 
 <p id="msg"></p>
   </div>
